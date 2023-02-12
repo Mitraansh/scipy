@@ -3131,6 +3131,10 @@ def gzscore(a, *, axis=0, ddof=0, nan_policy='propagate'):
     log = ma.log if isinstance(a, ma.MaskedArray) else np.log
 
     return zscore(log(a), axis=axis, ddof=ddof, nan_policy=nan_policy)
+    """ 
+    Here x will be the value of that particular instance and mean and standard deviation of that particular column should be needed
+    return zscore((x-np.mean([column]))/np.std([column]), axis=axis, ddof=ddof, nan_policy=nan_policy)
+    """
 
 
 def zmap(scores, compare, axis=0, ddof=0, nan_policy='propagate'):
